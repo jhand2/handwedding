@@ -7,11 +7,11 @@ def api():
     return "API"
 
 @app.route('/js/<path:path>')
-def css(path):
+def js(path):
     return send_from_directory("public/js", "%s.js" % path)
 
 @app.route('/css/<path:path>')
-def js(path):
+def css(path):
     return send_from_directory("public/css", "%s.css" % path)
 
 @app.route('/', defaults={'path': ''})
