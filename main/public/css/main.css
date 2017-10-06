@@ -43,14 +43,15 @@
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
   #header-icon-div {
-    max-width: 100px; } }
+    min-width: 100px;
+    max-width: 110px; } }
 /* Extra Small Devices, Phones */
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   #header-icon-div {
     visibility: visible;
     display: block;
-    max-width: 110px; } }
+    max-width: 115px; } }
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
 
