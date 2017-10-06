@@ -2,7 +2,8 @@ $primarycolor: #686868;
 $secondarycolor: #51c5cf;
 
 .navbar {
-    padding: 5px;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 .container {
@@ -15,6 +16,8 @@ $secondarycolor: #51c5cf;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0px;
+    height:100px;
 }
 
 @font-face {
@@ -30,20 +33,26 @@ $secondarycolor: #51c5cf;
 }
 
 .header-circle {
-    stroke-width:1.6871;
+    stroke-width:0;
     stroke-miterlimit:10;
     stroke: none;
     fill: $primarycolor;
+    padding: 0;
+    margin: 0;
+    //height: 100%;
 }
 
 .header-svg {
-    shape-rendering: geometricPrecision;
-    text-rendering: geometricPrecision;
-    image-rendering: optimizeQuality;
-    fill-rule: evenodd;
-    clip-rule: evenodd;
-    width: 100%;
-    height: 100%;
+    //shape-rendering: geometricPrecision;
+    //text-rendering: geometricPrecision;
+    //image-rendering: optimizeQuality;
+    //fill-rule: evenodd;
+    //clip-rule: evenodd;
+    display: block;
+    //width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 150px;
 }
 
 .header-link {
@@ -53,12 +62,33 @@ $secondarycolor: #51c5cf;
     font-variant: small-caps;
 }
 
+#header-icon-div {
+    //visibility: hidden;
+    //min-height: 100px;
+    //max-height: 110px;
+    //width: 180px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
     #header-icon-div {
         //visibility: hidden;
-        min-width: 100px;
-        max-width: 110px;
+        //min-height: 100px;
+        //max-height: 110px;
+        //width: 180px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        //height: 100%;
+    }
+
+    .common-header {
+        height:90px;
+    }
+
+    .header-svg {
+        height: 110px;
     }
 }
 
@@ -72,7 +102,15 @@ $secondarycolor: #51c5cf;
     #header-icon-div {
         visibility: visible;
         display: block;
-        max-width: 115px;
+        //width: 180px;
+    }
+
+    .common-header {
+        height:90px;
+    }
+
+    .header-svg {
+        height: 130px;
     }
 }
 
