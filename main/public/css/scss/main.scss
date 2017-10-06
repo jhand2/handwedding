@@ -24,11 +24,10 @@ $secondarycolor: #51c5cf;
 
 // header
 .header-circle-text {
-    stroke: $secondarycolor;
-    fill: $secondarycolor;
+    stroke: white;
+    fill: white;
     font-family: Cursive;
 }
-
 
 .header-circle {
     stroke-width:1.6871;
@@ -47,10 +46,6 @@ $secondarycolor: #51c5cf;
     height: 100%;
 }
 
-#header-icon-div {
-    max-width: 110px;
-}
-
 .header-link {
     padding: 10px;
     font-family: Georgia;
@@ -61,7 +56,8 @@ $secondarycolor: #51c5cf;
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
     #header-icon-div {
-        visibility: hidden;
+        //visibility: hidden;
+        max-width: 100px;
     }
 }
 
@@ -75,6 +71,7 @@ $secondarycolor: #51c5cf;
     #header-icon-div {
         visibility: visible;
         display: block;
+        max-width: 110px;
     }
 }
 
