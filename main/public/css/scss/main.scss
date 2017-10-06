@@ -55,13 +55,6 @@ $secondarycolor: #51c5cf;
     height: 150px;
 }
 
-.header-link {
-    padding: 10px;
-    font-family: Georgia;
-    font-size: 18px;
-    font-variant: small-caps;
-}
-
 #header-icon-div {
     //visibility: hidden;
     //min-height: 100px;
@@ -81,6 +74,15 @@ $secondarycolor: #51c5cf;
         padding-top: 0px;
         padding-bottom: 0px;
         //height: 100%;
+    }
+
+    .header-link {
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-family: Georgia;
+        font-size: 22px;
+        font-variant: small-caps;
     }
 
     .common-header {
@@ -103,6 +105,12 @@ $secondarycolor: #51c5cf;
         visibility: visible;
         display: block;
         //width: 180px;
+    }
+
+    .header-link {
+        padding-left: 80px;
+        padding-right: 80px;
+        font-size: 22px;
     }
 
     .common-header {

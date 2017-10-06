@@ -36,12 +36,6 @@
   margin: 0;
   height: 150px; }
 
-.header-link {
-  padding: 10px;
-  font-family: Georgia;
-  font-size: 18px;
-  font-variant: small-caps; }
-
 #header-icon-div {
   padding-top: 0px;
   padding-bottom: 0px; }
@@ -51,6 +45,14 @@
   #header-icon-div {
     padding-top: 0px;
     padding-bottom: 0px; }
+
+  .header-link {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: Georgia;
+    font-size: 22px;
+    font-variant: small-caps; }
 
   .common-header {
     height: 90px; }
@@ -63,6 +65,11 @@
   #header-icon-div {
     visibility: visible;
     display: block; }
+
+  .header-link {
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 22px; }
 
   .common-header {
     height: 90px; }
