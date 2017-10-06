@@ -1,0 +1,59 @@
+.navbar {
+  padding: 5px; }
+
+.container {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%; }
+
+.common-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+@font-face {
+  font-family: Cursive;
+  src: url(/fonts/cursive.ttf); }
+.header-circle-text {
+  stroke: #51c5cf;
+  fill: #51c5cf;
+  font-family: Cursive; }
+
+.header-circle {
+  stroke-width: 1.6871;
+  stroke-miterlimit: 10;
+  stroke: none;
+  fill: #686868; }
+
+.header-svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  width: 100%;
+  height: 100%; }
+
+#header-icon-div {
+  max-width: 110px; }
+
+.header-link {
+  padding: 10px;
+  font-family: Georgia;
+  font-size: 18px;
+  font-variant: small-caps; }
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  #header-icon-div {
+    visibility: hidden; } }
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  #header-icon-div {
+    visibility: visible;
+    display: block; } }
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+
+/*# sourceMappingURL=main.css.map */
