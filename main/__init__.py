@@ -18,6 +18,10 @@ def css(path):
 def fonts(path):
     return send_from_directory("public/fonts", path)
 
+@app.route('/img/<path:path>')
+def img(path):
+    return send_from_directory("public/img", path)
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):

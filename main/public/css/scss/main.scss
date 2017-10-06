@@ -1,5 +1,10 @@
-$primarycolor: #686868;
+$light-grey: #e5e5e5;
+$dark-grey: #686868;
+
+$primarycolor: #05173d;
 $secondarycolor: #51c5cf;
+$circle: #686868;
+$headerbg: $light-grey;
 
 .navbar {
     padding: 0px;
@@ -36,7 +41,7 @@ $secondarycolor: #51c5cf;
     stroke-width:0;
     stroke-miterlimit:10;
     stroke: none;
-    fill: $primarycolor;
+    fill: $circle;
     padding: 0;
     margin: 0;
     //height: 100%;
@@ -66,6 +71,17 @@ $secondarycolor: #51c5cf;
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
+    .navbar {
+        background: $headerbg;
+        border-color: $headerbg;
+    }
+
+    body {
+        background: url("/img/mainbg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     #header-icon-div {
         //visibility: hidden;
         //min-height: 100px;
@@ -78,11 +94,15 @@ $secondarycolor: #51c5cf;
 
     .header-link {
         padding: 10px;
-        padding-left: 40px;
-        padding-right: 40px;
         font-family: Georgia;
-        font-size: 22px;
+        font-size: 18px;
+        font-weight: bold;
         font-variant: small-caps;
+        color: $primarycolor;
+    }
+
+    .header-link>a {
+        color: $dark-grey !important;
     }
 
     .common-header {
@@ -105,12 +125,6 @@ $secondarycolor: #51c5cf;
         visibility: visible;
         display: block;
         //width: 180px;
-    }
-
-    .header-link {
-        padding-left: 80px;
-        padding-right: 80px;
-        font-size: 22px;
     }
 
     .common-header {
