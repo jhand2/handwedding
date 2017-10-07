@@ -148,7 +148,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
 )
 
 :: 7. Compile sass with python
-env\scripts\python "%DEPLOYMENT_SOURCE%"\sassc.py "%DEPLOYMENT_SOURCE%"\main\public\css\scss\ "%DEPLOYMENT_TARGET%"\main\public\css\
+:: env\scripts\python "%DEPLOYMENT_SOURCE%"\sassc.py "%DEPLOYMENT_SOURCE%"\main\public\css\scss\ "%DEPLOYMENT_TARGET%"\main\public\css\
 
 popd
 
