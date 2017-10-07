@@ -118,9 +118,11 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
   echo Found compatible virtual environment.
 )
 
+rename "%DEPLOYMENT_TARGET%"\env\Source\pip3.4.exe pip.exe
+
 :: 4. Install packages
 echo Pip install requirements.
-env\scripts\pip install -r requirements.txt
+"%DEPLOYMENT_TARGET"\env\Scripts\pip install -r requirements.txt
 IF !ERRORLEVEL! NEQ 0 goto error
 
 REM Add additional package installation here
