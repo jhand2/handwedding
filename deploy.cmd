@@ -151,7 +151,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
 )
 
 :: 7
-python sassc.py %DEPLOYMENT_SOURCE%\main\public\css\scss\ %DEPLOYMENT_TARGET%\main\public\css\
+env\scripts\python sassc.py %DEPLOYMENT_SOURCE%\main\public\css\scss\ %DEPLOYMENT_TARGET%\main\public\css\
 
 popd
 
