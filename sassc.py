@@ -6,6 +6,9 @@ def usage():
     return "Usage: python sassc.py <source> [destination]"
 
 class SassFile:
+    """
+    A representation of a sass file for compilation
+    """
     def __init__(self, fname):
         self.fname = fname
         self.out_file = self.fname.split(os.sep)[-1].split(".")[0] + ".css"
