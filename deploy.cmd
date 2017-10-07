@@ -118,8 +118,6 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
   echo Found compatible virtual environment.
 )
 
-rename "%DEPLOYMENT_TARGET%"\env\Source\pip3.4.exe pip.exe
-
 :: 4. Install packages
 echo Pip install requirements.
 "%DEPLOYMENT_TARGET"\env\Scripts\pip install -r requirements.txt
