@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory, render_template, request
-from rsvp import RsvpController
 import json
+from .rsvp import RsvpController
 
 app = Flask(__name__, template_folder="public/views")
 rsvp_controller = RsvpController()

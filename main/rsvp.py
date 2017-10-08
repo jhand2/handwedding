@@ -1,4 +1,4 @@
-from firebase import Firebase
+from .firebase import Firebase
 
 fb = Firebase()
 
