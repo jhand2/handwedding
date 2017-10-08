@@ -2,3 +2,5 @@
 env
 *.css
 *.css.map
+main/__pycache__
+main/public/css/.sass-cache
