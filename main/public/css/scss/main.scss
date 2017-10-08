@@ -6,111 +6,17 @@ $secondarycolor: #51c5cf;
 $circle: #686868;
 $headerbg: $light-grey;
 
-.navbar {
-    padding: 0px;
-    margin-top: 0px;
-}
-
 .container {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.common-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    height:100px;
-}
-
-@font-face {
-    font-family: Cursive;
-    src: url(/fonts/cursive.ttf);
-}
-
-// header
-.header-circle-text {
-    stroke: white;
-    fill: white;
-    font-family: Cursive;
-}
-
-.header-circle {
-    stroke-width:0;
-    stroke-miterlimit:10;
-    stroke: none;
-    fill: $circle;
-    padding: 0;
-    margin: 0;
-    //height: 100%;
-}
-
-.header-svg {
-    //shape-rendering: geometricPrecision;
-    //text-rendering: geometricPrecision;
-    //image-rendering: optimizeQuality;
-    //fill-rule: evenodd;
-    //clip-rule: evenodd;
-    display: block;
-    //width: 100%;
-    padding: 0;
-    margin: 0;
-    height: 150px;
-}
-
-#header-icon-div {
-    //visibility: hidden;
-    //min-height: 100px;
-    //max-height: 110px;
-    //width: 180px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
-    .navbar {
-        background: $headerbg;
-        border-color: $headerbg;
-    }
-
     body {
-        background: url("/img/mainbg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-    }
-
-    #header-icon-div {
-        //visibility: hidden;
-        //min-height: 100px;
-        //max-height: 110px;
-        //width: 180px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        //height: 100%;
-    }
-
-    .header-link {
-        padding: 10px;
-        font-family: Georgia;
-        font-size: 18px;
-        font-weight: bold;
-        font-variant: small-caps;
-        color: $primarycolor;
-    }
-
-    .header-link>a {
-        color: $dark-grey !important;
-    }
-
-    .common-header {
-        height:90px;
-    }
-
-    .header-svg {
-        height: 110px;
     }
 }
 
@@ -121,19 +27,7 @@ $headerbg: $light-grey;
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    #header-icon-div {
-        visibility: visible;
-        display: block;
-        //width: 180px;
-    }
 
-    .common-header {
-        height:90px;
-    }
-
-    .header-svg {
-        height: 130px;
-    }
 }
 
 /* Medium Devices, Desktops */

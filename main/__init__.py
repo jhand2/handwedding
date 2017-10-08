@@ -1,10 +1,25 @@
-from flask import Flask, send_from_directory, render_template
+from flask import Flask, send_from_directory, render_template, request
+from rsvp import RsvpController
+import json
 
 app = Flask(__name__, template_folder="public/views")
+rsvp_controller = RsvpController()
 
 @app.route("/api")
 def api():
     return "API"
+
+@app.route("/api/rsvp", methods=["GET", "POST"])
+def rsvp():
+    res = None
+    if request.method == 'POST':
+        print(request.data)
+        body = json.loads(request.data)
+        print(body)
+        res = rsvp_controller.add_rsvp(body)
+    else:
+        print()
+    return json.dumps(res)
 
 @app.route('/js/<path:path>')
 def js(path):
