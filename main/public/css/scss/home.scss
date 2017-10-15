@@ -1,20 +1,124 @@
+@import "main.scss";
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px|Vidaloka');
+@import url('https://fonts.googleapis.com/css?family=Vidaloka');
+@import url('https://fonts.googleapis.com/css?family=Rokkitt:300');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Rouge+Script');
+
+@font-face {
+    font-family: "Chopin Script";
+    src: url("/fonts/chopinscript.ttf");
+}
+
+@font-face {
+    font-family: "Darleston";
+    src: url("/fonts/Darleston.otf");
+}
+
 /* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
+@media only screen and (min-width : 0) {
     body {
-        background: url("/img/mainbg.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: url("/img/mainbg-mobile.jpg") no-repeat center center fixed;
+    }
+
+    .info {
+        position: absolute;
+        bottom: 4%;
+        width: 75%;
+        left: 12.5%;
+    }
+
+    .banner-img {
+        filter: brightness(0);
+        -webkit-filter: brightness(0);
+    }
+
+    .body-text {
+        font-size: 22px;
+        color: white;
+        font-family: 'Dancing Script', cursive;
+        //font-family: "Darleston", cursive;
+        text-shadow: 4px 4px #000000;
+        text-align: center;
+    }
+
+    .svg-text {
+        stroke: black;
+        fill: black;
+        //font-family: Vidaloka, serif;
+        font-family: "Chopin Script", cursive;
+        font-weight: lighter;
+    }
+
+    .amp-circle {
+        fill: white;
+    }
+
+    .date {
+        width: 100%;
+    }
+
+    .body-main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            display: inline;
+            margin: 20px 20px 0 20px;
+        }
+    }
+
+    .title-svg {
+        width: 15%;
+    }
+
+    .main {
+        font-size: 25px;
+        //font-family: Rokkitt, serif;
+        font-family: 'Josefin Slab', serif;
+        text-transform: uppercase;
+        font-weight: lighter;
+    }
+
+    .amp-text {
+        //font-family: Rokkitt,serif;
+        //font-family: 'Josefin Slab', serif;
+        //text-transform: uppercase;
+        //font-family: Helvetica;
+        //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-family: "Josefin Slab";
+        //font-weight: 100;
+        //font-weight: lighter;
+        font-style: italic;
     }
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 400px) {
 
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
+    body {
+        background: url("/img/altbg.jpg") no-repeat center center fixed;
+    }
 
+    .body-text {
+        font-size: 62px;
+    }
+
+    .main {
+        font-size: 118px;
+    }
+
+    .title-svg {
+        width: 12%;
+    }
 }
 
 /* Medium Devices, Desktops */

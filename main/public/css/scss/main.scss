@@ -1,10 +1,11 @@
-$light-grey: #e5e5e5;
+$light-grey: #f2f2f2;
 $dark-grey: #686868;
+$cream: #fffdf2;
 
 $primarycolor: #05173d;
 $secondarycolor: #51c5cf;
 $circle: #686868;
-$headerbg: $light-grey;
+$headerbg: #2d2d2d;
 
 .container {
     width: 100%;
@@ -13,15 +14,17 @@ $headerbg: $light-grey;
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-    body {
-        background-repeat: no-repeat;
+@media only screen and (min-width : 0px) {
+    .background {
         background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100%;
     }
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 400px) {
 
 }
 
