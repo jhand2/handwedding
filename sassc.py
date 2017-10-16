@@ -9,18 +9,20 @@ class SassFile:
     """
     A representation of a sass file for compilation
     """
-    def __init__(self, fname):
+    def __init__(self, directory, fname):
         self.fname = fname
-        self.out_file = self.fname.split(os.sep)[-1].split(".")[0] + ".css"
+        self.directory = directory
+        self.full_path = os.path.join(directory, fname)
+        self.out_file = fname.split(".")[0] + ".css"
         self._read_contents()
 
     def _read_contents(self):
-        with open(self.fname, "r") as f:
+        with open(self.full_path, "r") as f:
             self.contents = f.read()
             if not self.contents:
                 self.compiled = ""
             else:
-                self.compiled = sass.compile(string=self.contents)
+                self.compiled = sass.compile(string=self.contents, include_paths=[self.directory])
 
     def __str__(self):
         return self.fname
@@ -36,8 +38,7 @@ def compile_dir(d):
     files = []
     for fname in os.listdir(d):
         if fname.endswith(".scss"):
-            p = os.path.join(d, fname)
-            files.append(SassFile(p))
+            files.append(SassFile(d, fname))
     return files
 
 if __name__ == "__main__":
