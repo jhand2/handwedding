@@ -14,8 +14,10 @@ def rsvp():
     res = None
     if request.method == 'POST':
         print(request.data)
+        if type(request.data) != str:
+            request.data = request.data.decode("utf-8")
+
         body = json.loads(request.data)
-        print(body)
         res = rsvp_controller.add_rsvp(body)
     else:
         print()
