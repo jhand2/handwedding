@@ -20,14 +20,15 @@
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 0) {
     body {
-        background: url("/img/mainbg-mobile.jpg") no-repeat center center fixed;
+        //background: url("/img/mainbg-mobile.jpg") no-repeat center center fixed;
+        background: url("/img/altbg-sm.jpg") no-repeat center center fixed;
     }
 
     .info {
         position: absolute;
         bottom: 4%;
-        width: 75%;
-        left: 12.5%;
+        width: 85%;
+        left: 7.5%;
     }
 
     .banner-img {
@@ -39,15 +40,16 @@
         font-size: 22px;
         color: white;
         font-family: 'Dancing Script', cursive;
-        //font-family: "Darleston", cursive;
-        text-shadow: 4px 4px #000000;
+        text-shadow: 2px 2px #000000;
         text-align: center;
     }
 
     .svg-text {
         stroke: black;
         fill: black;
-        //font-family: Vidaloka, serif;
+    }
+
+    .amp-text {
         font-family: "Chopin Script", cursive;
         font-weight: lighter;
     }
@@ -58,6 +60,9 @@
 
     .date {
         width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 1.5%;
     }
 
     .body-main {
@@ -65,41 +70,71 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
 
-        p {
-            display: inline;
-            margin: 20px 20px 0 20px;
-        }
+    .info-middle {
+        padding-top: 1.5%;
+        padding-bottom: 2%;
     }
 
     .title-svg {
-        width: 15%;
+        width: 50px;
     }
 
     .main {
-        font-size: 25px;
-        //font-family: Rokkitt, serif;
+        display: inline;
+        font-size: 28px;
         font-family: 'Josefin Slab', serif;
         text-transform: uppercase;
         font-weight: lighter;
+        margin: 8px 12px 0 12px;
     }
 
-    .amp-text {
-        //font-family: Rokkitt,serif;
-        //font-family: 'Josefin Slab', serif;
-        //text-transform: uppercase;
-        //font-family: Helvetica;
-        //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    .banner-text {
         font-family: "Josefin Slab";
-        //font-weight: 100;
-        //font-weight: lighter;
+        font-size: 32px;
+        margin: 6px 10px 0 10px;
         font-style: italic;
     }
 }
 
-/* Extra Small Devices, Phones */
 @media only screen and (min-width : 400px) {
+    .title-svg {
+        width: 70px;
+    }
 
+    .main {
+        font-size: 32px;
+        margin: 8px 12px 0 12px;
+    }
+}
+
+@media only screen and (min-width : 525px) {
+    .main {
+        font-size: 34px;
+    }
+}
+
+@media only screen and (min-width : 625px) {
+    .main {
+        font-size: 40px;
+        margin: 10px 15px 0 15px;
+    }
+}
+
+@media only screen and (min-width : 725px) {
+    .title-svg {
+        width: 70px;
+    }
+
+    .main {
+        font-size: 50px;
+        margin: 20px 20px 0 20px;
+    }
+
+    .body-text {
+        text-shadow: 4px 4px #000000;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -113,20 +148,49 @@
     }
 
     .main {
-        font-size: 118px;
+        font-size: 62px;
     }
 
     .title-svg {
-        width: 12%;
+        width: 90px;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
+    .main {
+        font-size: 72px;
+    }
 
+    .title-svg {
+        width: 100px;
+    }
+
+    .date {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
+    .main {
+        font-size: 84px;
+    }
 
+    .title-svg {
+        width: 120px;
+    }
+
+    .date {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+/* HD */
+@media only screen and (min-width : 1600px) {
+    .main {
+        font-size: 118px;
+    }
 }
