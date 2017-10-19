@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% include "headcommon.html" %}
+    <script src="/js/home.js"></script>
     <link rel="stylesheet" href="/css/home.css">
     <title>Hand Wedding</title>
 </head>
@@ -27,21 +28,19 @@
                 <p class="body-text main">Alison</p>
             </div>
             <p class="body-text info-middle">Are Getting Married!</p>
-            <div class="date">
-                <svg class="date-svg"
+            <div id="banner-container" class="date">
+                <div id="banner-text" class="banner">
+                    <p class="banner-item svg-text banner-text" font-size="14">Sunday</p>
+                    <img class="banner-item banner-img" src="/img/favicon.png" />
+                    <p class="banner-item svg-text banner-text" font-size="14">July 22, 2018</p>
+                </div>
+                <svg id="banner-svg" class="banner date-svg"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 0 800 40">
-                    <defs>
-                        <mask id="date-mask" x="0" y="0" height="100" width="100">
-                            <rect fill="white" height="40" width="800" x="0" y="0"></rect>
-                            <text class="svg-text banner-text" x="370" y="21" text-anchor="end" stroke-width="1px" dy=".3em" font-size="14">Sunday</text>
-                            <image class="banner-img" x="380" y="6" width="30" height="30" xlink:href="/img/favicon.png" />
-                            <text class="svg-text banner-text" x="420" y="21" text-anchor="start" stroke-width="1px" dy=".3em" font-size="14">July 22, 2018</text>
-                        </mask>
-                    </defs>
-                    <path fill="white" stroke="white" d="M 800 0 L 0 0 L 10 20 L 0 40 L 800 40 L 790 20 L 800 0 " mask="url(#date-mask)" />
-                
+                    preserveAspectRatio="none"
+                    height="65px"
+                    viewBox="0 0 100 100">
+                    <path class="banner" fill="white" stroke="white" d="M 99 0 L 1 0 L 3 50 L 1 100 L 99 99 L 96 50 L 99 0" />
                 </svg>
             </div>
         </div>

@@ -20,20 +20,19 @@
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 0) {
     body {
-        //background: url("/img/mainbg-mobile.jpg") no-repeat center center fixed;
         background: url("/img/altbg-sm.jpg") no-repeat center center fixed;
     }
 
     .info {
         position: absolute;
-        bottom: 4%;
-        width: 85%;
-        left: 7.5%;
+        bottom: 15%;
+        width: 98%;
+        left: 1%;
     }
 
     .banner-img {
-        filter: brightness(0);
-        -webkit-filter: brightness(0);
+        height: 30px;
+        width: 30px;
     }
 
     .body-text {
@@ -60,9 +59,17 @@
 
     .date {
         width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-bottom: 1.5%;
+        position: relative;
+    }
+
+    .banner {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+        width: 100%;
     }
 
     .body-main {
@@ -70,6 +77,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .date-svg {
+        z-index: -1;
     }
 
     .info-middle {
@@ -92,13 +103,25 @@
 
     .banner-text {
         font-family: "Josefin Slab";
-        font-size: 32px;
+        font-size: 20px;
         margin: 6px 10px 0 10px;
         font-style: italic;
     }
+
+    .date-svg {
+        transform: scale(0.95, 0.6);
+    }
 }
 
-@media only screen and (min-width : 400px) {
+@media only screen and (min-width : 365px) {
+    .banner-text {
+        font-size:22px;
+    }
+
+    .date-svg {
+        transform: scale(0.95, 0.6);
+    }
+    
     .title-svg {
         width: 70px;
     }
@@ -110,14 +133,18 @@
 }
 
 @media only screen and (min-width : 525px) {
+    .date-svg {
+        transform: scale(0.8, 0.75);
+    }
+
     .main {
-        font-size: 34px;
+        font-size: 45px;
     }
 }
 
 @media only screen and (min-width : 625px) {
     .main {
-        font-size: 40px;
+        font-size: 50px;
         margin: 10px 15px 0 15px;
     }
 }
@@ -135,6 +162,13 @@
     .body-text {
         text-shadow: 4px 4px #000000;
     }
+
+    .info {
+        position: absolute;
+        bottom: 4%;
+        width: 85%;
+        left: 7.5%;
+    }
 }
 
 /* Small Devices, Tablets */
@@ -143,12 +177,20 @@
         background: url("/img/altbg-sm.jpg") no-repeat center center fixed;
     }
 
+    .banner-text {
+        font-size: 34px;
+    }
+
     .body-text {
         font-size: 62px;
     }
 
     .main {
         font-size: 62px;
+    }
+
+    .date-svg {
+        transform: scale(0.7, 0.8);
     }
 
     .title-svg {
@@ -162,13 +204,12 @@
         font-size: 72px;
     }
 
-    .title-svg {
-        width: 100px;
+    .date-svg {
+        transform: scale(0.6, 0.8);
     }
 
-    .date {
-        padding-left: 10%;
-        padding-right: 10%;
+    .title-svg {
+        width: 100px;
     }
 }
 
@@ -178,19 +219,23 @@
         font-size: 84px;
     }
 
+    .date-svg {
+        transform: scale(0.55, 0.75);
+    }
+
     .title-svg {
         width: 120px;
     }
 
-    .date {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
 }
 
 /* HD */
 @media only screen and (min-width : 1600px) {
     .main {
         font-size: 118px;
+    }
+
+    .date-svg {
+        transform: scale(0.4, 0.75);
     }
 }
