@@ -1,0 +1,19 @@
+#carousel-container {
+    margin-top: 5%;
+}
+
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 600px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: auto; /* Align slide image horizontally center */
+    //box-shadow: 0 0 8px 8px white inset;
+    max-height: 600px;
+}
+.bs-example{
+	margin: 20px;
+}
