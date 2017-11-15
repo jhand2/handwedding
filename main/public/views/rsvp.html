@@ -5,17 +5,22 @@
     <title>RSVP</title>
 
     <script src="/js/rsvp.js"></script>
+    <link rel="stylesheet" href="/css/rsvp.css">
 </head>
 <body>
     {% include "header.html" %}
     <div class="container">
         <div class="row">
-            <form class="col-sm-6" id="rsvp_submit">
-                <div id="name_row" class="form-group">
+            <form id="rsvp_submit">
+                <div id="name-row" class="form-group">
                     <label>Name: </label>
-                    <input id="name" placeholder="Alison Hand" class="form-control" type="text" value="">
+                    <input id="name" placeholder="" class="form-control" type="text" value="">
                 </div>
-                <button class="btn col-sm-offset-11" type="submit" value="Submit">Submit</button>
+                <div id="npeople-row" class="form-group">
+                    <label>Number Of People: </label>
+                    <input id="npeople" placeholder="" class="form-control" type="number" value="">
+                </div>
+                <button id="submit" class="btn" type="submit" value="Submit">Submit</button>
             </form>
         </div>
     </div>
