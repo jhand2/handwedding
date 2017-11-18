@@ -9,15 +9,6 @@ $(function() {
         img.attr("src", imgUrl);
         itemDiv.append(img);
         carousel.append(itemDiv)
-
-        //var indicator = $('<li data-target="#myCarousel"></li>');
-        //indicator.attr("data-slide-to", i);
-        //indicatorDiv.append(indicator);
-
-        //if (i === 0){
-            //itemDiv.addClass("active");
-            //indicator.addClass("active");
-        //}
     }
     $('#myCarousel').slick({
         centerMode: true,
@@ -58,22 +49,41 @@ $(function() {
 
     updateClasses();
 
-    $("#myCarousel").on("beforeChange", function() {
-        updateClasses();
+    $("#myCarousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+        updateClasses(nextSlide);
     });
 });
 
-function updateClasses() {
-    $("div[tabindex]").each(function() {
-        var currIndex = $(".slick-current").attr("data-slick-index");
+function updateClasses(newCurr) {
+    var currIndex = $(".slick-current").attr("data-slick-index");
+    var total = 7;
+    $(".slick-slide").each(function(index) {
         $(this).removeClass("item-left");
         $(this).removeClass("item-right");
-        if ($(this).attr('data-slick-index') === currIndex) {
+        $(this).removeClass("fake-center");
+        var i = parseInt($(this).attr('data-slick-index'));
+
+        if (circularDistance(newCurr, i, total, -1) <= 3) {
             $(this).addClass('item-left');
-        } else if ($(this).attr('data-slick-index') > currIndex) {
-            $(this).addClass('item-right');
         } else {
-            $(this).addClass('item-left');
+            $(this).addClass('item-right');
         }
     });
+}
+
+function circularDistance(a, b, total, direction) {
+    var d = 0;
+    // if left
+    if (direction < 0) {
+        if (b < a)
+            d = a - b;
+        else
+            d = a + (total - b);
+    } else {
+        if (b > a)
+            d = b - a;
+        else
+            d = (total - a) + b;
+    }
+    return d;
 }
