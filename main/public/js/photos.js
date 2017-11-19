@@ -3,7 +3,8 @@ $(function() {
     //var carousel = $(".carousel-inner");
     var carousel = $("#myCarousel");
     //var indicatorDiv = $(".carousel-indicators");
-    for (var i = 0; i < 7; i++) {
+    var total = 7;
+    for (var i = 0; i < total; i++) {
         var itemDiv = $('<div class="item"></div>');
         var img = $('<img />');
         img.attr("src", imgUrl);
@@ -47,20 +48,19 @@ $(function() {
         ]
     });
 
-    updateClasses();
+    updateClasses(0, total);
 
     $("#myCarousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        updateClasses(nextSlide);
+        updateClasses(nextSlide, total);
     });
 });
 
-function updateClasses(newCurr) {
+function updateClasses(newCurr, total) {
     var currIndex = $(".slick-current").attr("data-slick-index");
-    var total = 7;
     $(".slick-slide").each(function(index) {
         $(this).removeClass("item-left");
         $(this).removeClass("item-right");
-        $(this).removeClass("fake-center");
+
         var i = parseInt($(this).attr('data-slick-index'));
 
         if (circularDistance(newCurr, i, total, -1) <= 3) {
