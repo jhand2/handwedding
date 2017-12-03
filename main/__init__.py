@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory, render_template, request
+import os
 import json
 from .rsvp import RsvpController
 
@@ -23,6 +24,10 @@ def rsvp():
         print()
     return json.dumps(res)
 
+@app.route("/api/photo_paths")
+def photo_paths():
+    return json.dumps(os.listdir("public/img/engagement/png"))
+
 @app.route('/js/<path:path>')
 def js(path):
     return send_from_directory("public/js", path)
@@ -44,6 +49,8 @@ def img(path):
 def index(path):
     if path == "":
         return render_template("index.html")
+    elif "favicon.ico" in path:
+        return send_from_directory("public/img", path)
     else:
         return render_template("%s.html" % path, title=path)
 

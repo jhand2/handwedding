@@ -3,15 +3,30 @@ $(function() {
     //var carousel = $(".carousel-inner");
     var carousel = $("#myCarousel");
     //var indicatorDiv = $(".carousel-indicators");
-    var total = 7;
-    for (var i = 0; i < total; i++) {
-        var itemDiv = $('<div class="item"></div>');
-        var img = $('<img />');
-        img.attr("src", imgUrl);
-        itemDiv.append(img);
-        carousel.append(itemDiv)
-    }
-    $('#myCarousel').slick({
+    $.get("/api/photo_paths").then(function(paths) {
+        var total = 7;
+        paths = JSON.parse(paths);
+        for (let p of paths) {
+            var itemDiv = $('<div class="item"></div>');
+            var img = $('<img />');
+            img.attr("src", "/img/engagement/png/" + p);
+            itemDiv.append(img);
+            carousel.append(itemDiv)
+        }
+
+        addCarousel(carousel);
+
+        updateClasses(0, total);
+
+        $("#myCarousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+            updateClasses(nextSlide, total);
+        });
+
+    })
+});
+
+function addCarousel(container) {
+    container.slick({
         centerMode: true,
         centerPadding: '20px',
         slidesToShow: 3,
@@ -47,13 +62,7 @@ $(function() {
             }
         ]
     });
-
-    updateClasses(0, total);
-
-    $("#myCarousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        updateClasses(nextSlide, total);
-    });
-});
+}
 
 function updateClasses(newCurr, total) {
     var currIndex = $(".slick-current").attr("data-slick-index");

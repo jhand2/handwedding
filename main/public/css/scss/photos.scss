@@ -36,7 +36,7 @@ body {
 }
 
 #myCarousel {
-    box-shadow: 4px 4px 30px 10px #777777;
+    //box-shadow: 4px 4px 30px 10px #777777;
     margin: 0 auto;
 }
 
@@ -78,16 +78,16 @@ body {
 }
 
 .slick-slide img {
-    -webkit-transform: -webkit-translate(0px, 0);
-    -moz-transform: translate(0px, 0);
-    -ms-transform: translate(0px, 0);
-    -o-transform: translate(0px, 0);
-    transform: translate(0px, 0);
+    //-webkit-transform: -webkit-translate(0px, 0);
+    //-moz-transform: translate(0px, 0);
+    //-ms-transform: translate(0px, 0);
+    //-o-transform: translate(0px, 0);
+    //transform: translate(0px, 0);
 
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -o-transition: -o-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -moz-transition: -moz-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -webkit-transition: -webkit-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    //transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    //-o-transition: -o-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    //-moz-transition: -moz-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    //-webkit-transition: -webkit-transform 500ms ease-in-out, opacity 500ms ease-in-out;
 }
 
 .slick-slide img{
@@ -95,17 +95,17 @@ body {
 }
 
 .slick-slide.item-left img {
-    -webkit-transform: scale(0.5) translateX(50%);
-    -moz-transform: scale(0.5) translateX(50%);
-    -o-transform: scale(0.5) translateX(50%);
-    transform: scale(0.5) translateX(50%);
+    //-webkit-transform: scale(0.5) translateX(50%);
+    //-moz-transform: scale(0.5) translateX(50%);
+    //-o-transform: scale(0.5) translateX(50%);
+    //transform: scale(0.5) translateX(50%);
 }
 
 .slick-slide.item-right img {
-    -webkit-transform: scale(0.5) translateX(-50%);
-    -moz-transform: scale(0.5) translateX(-50%);
-    -o-transform: scale(0.5) translateX(-50%);
-    transform: scale(0.5) translateX(-50%);
+    //-webkit-transform: scale(0.5) translateX(-50%);
+    //-moz-transform: scale(0.5) translateX(-50%);
+    //-o-transform: scale(0.5) translateX(-50%);
+    //transform: scale(0.5) translateX(-50%);
 }
 
 .slick-slide.slick-active img {
