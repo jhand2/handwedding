@@ -8,9 +8,13 @@ $(function() {
         paths = JSON.parse(paths);
         for (let p of paths) {
             var itemDiv = $('<div class="item"></div>');
-            var img = $('<img />');
-            img.attr("src", "/img/engagement/png/" + p);
+            var img = $('<img class="item-img" />');
+            img.attr("src", "/img/engagement/jpg/" + p);
             itemDiv.append(img);
+            var w = Math.min(900, Math.round($(window).width() * 0.74));
+            var h = Math.round(w * 0.72);
+            itemDiv.width(w + 'px');
+            itemDiv.height(h + 'px');
             carousel.append(itemDiv)
         }
 
@@ -21,7 +25,6 @@ $(function() {
         $("#myCarousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
             updateClasses(nextSlide, total);
         });
-
     })
 });
 

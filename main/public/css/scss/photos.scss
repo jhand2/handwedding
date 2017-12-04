@@ -5,8 +5,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background: url(http://www.kirklandwa.gov/Assets/Template/Kirkland+Waterfront+Dock.jpg) no-repeat center center fixed;
-    background-size: 1920px 1080px;
+    background: #c7d5ed;
 }
 
 #carousel-container {
@@ -47,14 +46,14 @@ body {
 
 .item-right {
     display: flex !important;
-    justify-content: flex-start;
+    justify-content: center;
     overflow:hidden;
     align-items: center;
 }
 
 .item-left {
     display: flex !important;
-    justify-content: flex-end;
+    justify-content: center;
     overflow:hidden;
     align-items: center;
 }
@@ -62,7 +61,7 @@ body {
 .item-center {
     display: flex !important;
     overflow:hidden;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -78,16 +77,16 @@ body {
 }
 
 .slick-slide img {
-    //-webkit-transform: -webkit-translate(0px, 0);
-    //-moz-transform: translate(0px, 0);
-    //-ms-transform: translate(0px, 0);
-    //-o-transform: translate(0px, 0);
-    //transform: translate(0px, 0);
+    -webkit-transform: -webkit-translate(0px, 0);
+    -moz-transform: translate(0px, 0);
+    -ms-transform: translate(0px, 0);
+    -o-transform: translate(0px, 0);
+    transform: translate(0px, 0);
 
-    //transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    //-o-transition: -o-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    //-moz-transition: -moz-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    //-webkit-transition: -webkit-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    -o-transition: -o-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    -moz-transition: -moz-transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    -webkit-transition: -webkit-transform 500ms ease-in-out, opacity 500ms ease-in-out;
 }
 
 .slick-slide img{
@@ -95,36 +94,34 @@ body {
 }
 
 .slick-slide.item-left img {
-    //-webkit-transform: scale(0.5) translateX(50%);
-    //-moz-transform: scale(0.5) translateX(50%);
-    //-o-transform: scale(0.5) translateX(50%);
-    //transform: scale(0.5) translateX(50%);
+    -webkit-transform: scale(0.5) translateX(50%);
+    -moz-transform: scale(0.5) translateX(50%);
+    -o-transform: scale(0.5) translateX(50%);
+    transform: scale(0.5) translateX(50%);
 }
 
 .slick-slide.item-right img {
-    //-webkit-transform: scale(0.5) translateX(-50%);
-    //-moz-transform: scale(0.5) translateX(-50%);
-    //-o-transform: scale(0.5) translateX(-50%);
-    //transform: scale(0.5) translateX(-50%);
+    -webkit-transform: scale(0.5) translateX(-50%);
+    -moz-transform: scale(0.5) translateX(-50%);
+    -o-transform: scale(0.5) translateX(-50%);
+    transform: scale(0.5) translateX(-50%);
 }
 
 .slick-slide.slick-active img {
     opacity: 0.7;
 }
 
-.slick-slide {
-    width: 820px !important;
-    height: 600px;
-}
-
 .slick-active.slick-center img, .fake-center img {
-    height: 600px !important;
     opacity: 1;
-    left: -200px;
-    right: -200px;
     transform: scale(1.0);
 }
 
 .carousel-control {
     z-index: 90;
+}
+
+.item-img {
+    //padding: 20px;
+    //background-clip: padding-box;
+    clip-path: inset(5px 5px 5px 5px);
 }

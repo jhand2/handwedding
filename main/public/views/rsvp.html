@@ -12,17 +12,24 @@
     <div class="container">
         <div class="row">
             <form id="rsvp_submit">
-                <div id="name-row" class="form-group">
-                    <label>Name: </label>
+                <div id="name-row" class="form-group active">
+                    <h2>Name: </h2>
                     <input id="name" placeholder="" class="form-control" type="text" value="">
                 </div>
-                <div id="npeople-row" class="form-group">
-                    <label>Number Of People: </label>
-                    <input id="npeople" placeholder="" class="form-control" type="number" value="">
+                <div id="rsvp" class="form-group">
+                    <h2>RSVP: </h2>
+                    <label><input type="radio" name="optradio"> Yes, I'll be there!</label>
+                    <label><input type="radio" name="optradio"> Sorry, I'm going to miss it</label>
                 </div>
-                <button id="submit" class="btn" type="submit" value="Submit">Submit</button>
+                <div id="guests-row" class="form-group">
+                    <h2>Additional Guest Names:</h2>
+                    <input id="guests" placeholder="" class="form-control" type="number" value="">
+                </div>
             </form>
         </div>
+    </div>
+    <div id="footer">
+        <button id="submit" class="btn" type="submit" value="Submit">Next</button>
     </div>
 </body>
 </html>
