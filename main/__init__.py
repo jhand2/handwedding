@@ -3,6 +3,8 @@ import os
 import json
 from main.rsvp import RsvpController
 
+root_dir = os.path.dirname(os.path.abspath(__file__))
+
 app = Flask(__name__, template_folder="public/views")
 rsvp_controller = RsvpController()
 
@@ -26,7 +28,7 @@ def rsvp():
 
 @app.route("/api/photo_paths")
 def photo_paths():
-    return json.dumps(os.listdir(os.path.join("public", "img", "engagement", "jpg")))
+    return json.dumps(os.listdir(os.path.join(root_dir, "public", "img", "engagement", "jpg")))
 
 @app.route('/js/<path:path>')
 def js(path):
