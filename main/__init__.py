@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory, render_template, request
 import os
 import json
-from .rsvp import RsvpController
+from main.rsvp import RsvpController
 
 app = Flask(__name__, template_folder="public/views")
 rsvp_controller = RsvpController()
