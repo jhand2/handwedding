@@ -121,7 +121,14 @@ body {
 }
 
 .item-img {
-    //padding: 20px;
-    //background-clip: padding-box;
     clip-path: inset(5px 5px 5px 5px);
+}
+
+.slick-dots {
+    //bottom: 5%;
+    position: static;
+}
+
+:focus {
+    outline: 0;
 }

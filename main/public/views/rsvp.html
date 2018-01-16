@@ -6,6 +6,8 @@
 
     <script src="/js/rsvp.js"></script>
     <link rel="stylesheet" href="/css/rsvp.css">
+
+    <script src="https://use.fontawesome.com/1ae9f50b6e.js"></script>
 </head>
 <body>
     {% include "header.html" %}
@@ -18,12 +20,16 @@
                 </div>
                 <div id="rsvp" class="form-group">
                     <h2>RSVP: </h2>
-                    <label><input type="radio" name="optradio"> Yes, I'll be there!</label>
-                    <label><input type="radio" name="optradio"> Sorry, I'm going to miss it</label>
+                    <label><input type="radio" name="optradio" value="true"> Yes, I'll be there!</label>
+                    <label><input type="radio" name="optradio" value="false"> Sorry, I'm going to miss it</label>
                 </div>
                 <div id="guests-row" class="form-group">
-                    <h2>Additional Guest Names:</h2>
-                    <input id="guests" placeholder="" class="form-control" type="number" value="">
+                    <h2>Additional Guests:</h2>
+                    <div id="guest-container"></div>
+                    <div class="guest-btn-container">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        <span id="add-guest">Add Guest Name</span>
+                    </div>
                 </div>
             </form>
         </div>

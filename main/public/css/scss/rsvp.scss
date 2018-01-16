@@ -30,6 +30,41 @@
     width: 100%;
 }
 
+.fa {
+    vertical-align: middle;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.fa-plus-circle {
+    color: green;
+    cursor: pointer;
+}
+
+#add-guest {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#add-guest:hover {
+    color: green;
+}
+
+.fa-times-circle:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.guest-btn-container {
+    margin-top: 1%;
+}
+
+.guest-row {
+    width: 70%;
+    margin-bottom: 1%;
+    display: inline;
+}
+
 form>div {
     margin-top: 5%;
 }

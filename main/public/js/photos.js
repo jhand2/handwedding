@@ -2,7 +2,6 @@ $(function() {
     var imgUrl = "http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg";
     //var carousel = $(".carousel-inner");
     var carousel = $("#myCarousel");
-    //var indicatorDiv = $(".carousel-indicators");
     $.get("/api/photo_paths").then(function(paths) {
         var total = 7;
         paths = JSON.parse(paths);
@@ -19,6 +18,7 @@ $(function() {
         }
 
         addCarousel(carousel);
+        $(".slick-dots>li>button").text("&bull;")
 
         updateClasses(0, total);
 
@@ -36,6 +36,7 @@ function addCarousel(container) {
         arrows: true,
         cssEase: "ease-in-out",
         variableWidth: true,
+        dots: true,
         prevArrow:
             '<a class="carousel-control left" href="#myCarousel">' +
                 '<span class="glyphicon glyphicon-chevron-left"></span>' +
@@ -49,6 +50,7 @@ function addCarousel(container) {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
+                    dots: false,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1
@@ -58,6 +60,7 @@ function addCarousel(container) {
                 breakpoint: 480,
                 settings: {
                     arrows: false,
+                    dots: false,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1

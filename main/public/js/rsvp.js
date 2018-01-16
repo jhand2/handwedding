@@ -3,24 +3,48 @@ $(function() {
     var fields = $(".form-group").length;
     $(".container").css("margin-top", height);
 
-    $("#rsvp_submit").submit(function(e) {
-        e.preventDefault();
-        console.log(submit);
-        //d = {
-            //"name": $("#name").val()
-        //}
+    $("#add-guest").on("click", function(e) {
+        $("#guest-container").append(
+            '<div>' +
+                '<input class="guest-row form-control"></input>' +
+                '<i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>' +
+            '</div>'
+        );
 
-        //$.ajax({
-            //url: "/api/rsvp",
-            //type: "post",
-            //data: JSON.stringify(d),
-            //processData: false,
-            //contentType: "application/json"
-        //}).then(function() {
-            //$("#name").val("");
-            //$("input").blur();
-        //});
+        $(".fa-times-circle").on("click", function(e) {
+            var i = $(this).parent().index();
+            $(this).parent().remove();
+        });
     });
+
+    var submit_data = function() {
+        var going_selected = $('input[name=optradio]:checked', '#rsvp_submit').val();
+        var guests = [];
+        $(".guest-row").each(function(i) {
+            guests.push($(this).val());
+        });
+
+        var d = {
+            "name": $("#name").val(),
+            "attending": going_selected == "true",
+            "guests": guests
+        }
+
+        console.log(d);
+
+        $.ajax({
+            url: "/api/rsvp",
+            type: "post",
+            data: JSON.stringify(d),
+            processData: false,
+            contentType: "application/json"
+        }).then(function() {
+            $("#name").val("");
+            $("input").blur();
+            $("#guest-container").empty();
+        });
+
+    }
 
     $("#submit").on("click", function(e) {
         var active = $(".active");
@@ -32,11 +56,14 @@ $(function() {
         if (nxt.length > 0) {
             nxt.addClass("active");
             $(window).scrollTop(Math.max(0, nxt.offset().top - height - height));
+
             if ((i + 1) == nchildren) {
                 $(this).text("Submit");
             } else {
                 $(this).text("Next");
             }
+        } else {
+            submit_data();
         }
     });
 })
