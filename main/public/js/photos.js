@@ -1,6 +1,20 @@
 $(function() {
     var imgUrl = "http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg";
-    //var carousel = $(".carousel-inner");
+
+    $("#photo-modal").hide();
+    $("#photo-modal").on("click", function() {
+        $("#photo-modal").css("opacity", 0);
+        $("#photo-modal")
+        .one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+        function(e){
+            console.log("done")
+            $(this).hide();
+            $(this).unbind(
+                'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
+            );
+        });
+    });
+
     var carousel = $("#myCarousel");
     $.get("/api/photo_paths").then(function(paths) {
         var total = 7;
@@ -14,6 +28,31 @@ $(function() {
             var h = Math.round(w * 0.72);
             itemDiv.width(w + 'px');
             itemDiv.height(h + 'px');
+
+            itemDiv.on("click", function(e) {
+                console.log($(e).offset())
+                var img = $("#photo-modal-img");
+
+                $("#photo-modal-img").attr("src", e.target.currentSrc);
+                //$("#photo-modal-img").css("max-width", e.target.width);
+                //$("#photo-modal-img").css("max-height", e.target.height);
+                //$("#photo-modal-img").css("opacity", 0);
+                $("#photo-modal").css("opacity", 0);
+                $("#photo-modal").show();
+
+                $("#photo-modal-img").css("max-height", "100vh");
+                $("#photo-modal-img").css("max-width", "100%");
+                $("#photo-modal").css("opacity", 1);
+                //var portrait = img.height() > img.width();
+                //if (portrait) {
+                    //$("#photo-modal-img").attr("height", "100vh");
+                //} else {
+                    //$("#photo-modal-img").attr("width", "100%");
+                //}
+                //$("#photo-modal-img").attr("max-width", "100%");
+                //$("#photo-modal-img").attr("max-height", "100vh");
+            });
+
             carousel.append(itemDiv)
         }
 

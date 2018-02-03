@@ -30,8 +30,6 @@ $(function() {
             "guests": guests
         }
 
-        console.log(d);
-
         $.ajax({
             url: "/api/rsvp",
             type: "post",
@@ -42,28 +40,13 @@ $(function() {
             $("#name").val("");
             $("input").blur();
             $("#guest-container").empty();
+            $('#rsvp input[type="radio":checked]').each(function(){
+                $(this).checked = false;  
+            });
         });
-
     }
 
     $("#submit").on("click", function(e) {
-        var active = $(".active");
-        var nchildren = $("#rsvp_submit").children().length;
-        var i = active.index() + 1;
-        active.removeClass("active");
-        var selector = ".form-group:nth-child(" + (i + 1) + ")";
-        var nxt = $(selector);
-        if (nxt.length > 0) {
-            nxt.addClass("active");
-            $(window).scrollTop(Math.max(0, nxt.offset().top - height - height));
-
-            if ((i + 1) == nchildren) {
-                $(this).text("Submit");
-            } else {
-                $(this).text("Next");
-            }
-        } else {
-            submit_data();
-        }
+        submit_data();
     });
 })
