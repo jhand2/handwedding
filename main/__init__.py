@@ -26,9 +26,9 @@ def rsvp():
         print()
     return json.dumps(res)
 
-@app.route("/api/photo_paths")
-def photo_paths():
-    return json.dumps(os.listdir(os.path.join(root_dir, "public", "img", "engagement", "jpg")))
+@app.route('/api/photo_paths/<path:path>')
+def photo_paths(path):
+    return json.dumps(os.listdir(os.path.join(root_dir, "public", "img", "engagement", path)))
 
 @app.route('/js/<path:path>')
 def js(path):
@@ -44,6 +44,7 @@ def fonts(path):
 
 @app.route('/img/<path:path>')
 def img(path):
+    print(path)
     return send_from_directory("public/img", path)
 
 @app.route('/', defaults={'path': ''})

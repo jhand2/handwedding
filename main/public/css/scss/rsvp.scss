@@ -1,3 +1,11 @@
+body {
+    background: url("/img/waterfront_1920w_cropped.jpg") no-repeat right center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .container {
     margin-left: 20%;
     margin-right: 20%;
@@ -26,7 +34,7 @@
     padding-bottom: 12px;
     font-weight: bold;
     font-size: 18px;
-    background: #6ad184;
+    background: #5f9bfc;
 }
 
 .row {
@@ -91,6 +99,7 @@ form>div {
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 0.5em;
+    background: white;
 }
 
 .form-group>h2 {

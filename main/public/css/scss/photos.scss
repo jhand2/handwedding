@@ -23,11 +23,20 @@ body {
 }
 
 .row, .carousel{
-    background: rgba(180, 180, 180, 0.1);
+    //background: rgba(180, 180, 180, 0.1);
     position: absolute;
     height: 100%; /* Prevent carousel from being distorted if for some reason image doesn't load */
     top: 0;
     width: 100%;
+}
+
+body {
+    background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/jVhILry/modern-motion-background-black-and-white-4k_v1g4mbvpkx__F0000.png") no-repeat center center fixed; 
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .item, .carousel .item img{
@@ -71,9 +80,13 @@ body {
     justify-content: center;
 }
 
+.slick-list {
+    margin-top: 100px;
+}
+
 .slick-slide {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .slick-slide img {
@@ -94,21 +107,21 @@ body {
 }
 
 .slick-slide.item-left img {
-    -webkit-transform: scale(0.5) translateX(50%);
-    -moz-transform: scale(0.5) translateX(50%);
-    -o-transform: scale(0.5) translateX(50%);
-    transform: scale(0.5) translateX(50%);
+    //-webkit-transform: scale(0.5) translateX(50%);
+    //-moz-transform: scale(0.5) translateX(50%);
+    //-o-transform: scale(0.5) translateX(50%);
+    //transform: scale(0.5) translateX(50%);
 }
 
 .slick-slide.item-right img {
-    -webkit-transform: scale(0.5) translateX(-50%);
-    -moz-transform: scale(0.5) translateX(-50%);
-    -o-transform: scale(0.5) translateX(-50%);
-    transform: scale(0.5) translateX(-50%);
+    //-webkit-transform: scale(0.5) translateX(-50%);
+    //-moz-transform: scale(0.5) translateX(-50%);
+    //-o-transform: scale(0.5) translateX(-50%);
+    //transform: scale(0.5) translateX(-50%);
 }
 
 .slick-slide.slick-active img {
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .slick-active.slick-center img, .fake-center img {
@@ -146,10 +159,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    transition: 200ms ease-in-out;
-    -o-transition: 200ms ease-in-out;
-    -moz-transition: 200ms ease-in-out;
-    -webkit-transition: 200ms ease-in-out;
+    //transition: 200ms ease-in-out;
+    //-o-transition: 200ms ease-in-out;
+    //-moz-transition: 200ms ease-in-out;
+    //-webkit-transition: 200ms ease-in-out;
 }
 
 #photo-modal-img {

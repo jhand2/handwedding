@@ -1,6 +1,4 @@
 $(function() {
-    var imgUrl = "http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg";
-
     $("#photo-modal").hide();
     $("#photo-modal").on("click", function() {
         $("#photo-modal").css("opacity", 0);
@@ -16,13 +14,14 @@ $(function() {
     });
 
     var carousel = $("#myCarousel");
-    $.get("/api/photo_paths").then(function(paths) {
+    var imFolder = "magnolia";
+    $.get("/api/photo_paths/" + imFolder).then(function(paths) {
         var total = 7;
         paths = JSON.parse(paths);
         for (let p of paths) {
             var itemDiv = $('<div class="item"></div>');
             var img = $('<img class="item-img" />');
-            img.attr("src", "/img/engagement/jpg/" + p);
+            img.attr("src", "/img/engagement/" + imFolder + "/" + p);
             itemDiv.append(img);
             var w = Math.min(900, Math.round($(window).width() * 0.74));
             var h = Math.round(w * 0.72);
@@ -34,23 +33,12 @@ $(function() {
                 var img = $("#photo-modal-img");
 
                 $("#photo-modal-img").attr("src", e.target.currentSrc);
-                //$("#photo-modal-img").css("max-width", e.target.width);
-                //$("#photo-modal-img").css("max-height", e.target.height);
-                //$("#photo-modal-img").css("opacity", 0);
                 $("#photo-modal").css("opacity", 0);
                 $("#photo-modal").show();
 
                 $("#photo-modal-img").css("max-height", "100vh");
                 $("#photo-modal-img").css("max-width", "100%");
                 $("#photo-modal").css("opacity", 1);
-                //var portrait = img.height() > img.width();
-                //if (portrait) {
-                    //$("#photo-modal-img").attr("height", "100vh");
-                //} else {
-                    //$("#photo-modal-img").attr("width", "100%");
-                //}
-                //$("#photo-modal-img").attr("max-width", "100%");
-                //$("#photo-modal-img").attr("max-height", "100vh");
             });
 
             carousel.append(itemDiv)
@@ -70,7 +58,7 @@ $(function() {
 function addCarousel(container) {
     container.slick({
         centerMode: true,
-        centerPadding: '20px',
+        centerPadding: '30px',
         slidesToShow: 3,
         arrows: true,
         cssEase: "ease-in-out",
