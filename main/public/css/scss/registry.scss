@@ -12,6 +12,10 @@
     src: url("/fonts/Darleston.otf");
 }
 
+#link-registry {
+    color: #82b1ff;
+}
+
 html, body {
     height: 100%;
     top: 0;
@@ -50,7 +54,7 @@ h1 {
 
 .reglink {
     display: inline-block;
-    box-shadow: 3px 3px 15px 3px;
+    box-shadow: 3px 3px 15px 3px #1e1e1e;
     border-radius: 15px;
 
     margin-top: 15px;
@@ -58,6 +62,11 @@ h1 {
     margin-right: 20px;
     width: 50em;
     height: 20em;
+    cursor: pointer;
+}
+
+.reglink:hover {
+    box-shadow: 3px 3px 15px 3px #cecece;
 }
 
 #cb-link {

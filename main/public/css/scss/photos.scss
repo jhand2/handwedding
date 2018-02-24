@@ -8,6 +8,10 @@ body {
     background: #c7d5ed;
 }
 
+#link-photos {
+    color: #82b1ff;
+}
+
 #carousel-container {
     margin-top: 3%;
     padding: 0px;
@@ -23,7 +27,6 @@ body {
 }
 
 .row, .carousel{
-    //background: rgba(180, 180, 180, 0.1);
     position: absolute;
     height: 100%; /* Prevent carousel from being distorted if for some reason image doesn't load */
     top: 0;
@@ -44,7 +47,6 @@ body {
 }
 
 #myCarousel {
-    //box-shadow: 4px 4px 30px 10px #777777;
     margin: 0 auto;
 }
 
@@ -90,38 +92,12 @@ body {
 }
 
 .slick-slide img {
-    -webkit-transform: -webkit-translate(0px, 0);
-    -moz-transform: translate(0px, 0);
-    -ms-transform: translate(0px, 0);
-    -o-transform: translate(0px, 0);
-    transform: translate(0px, 0);
-
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -o-transition: -o-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -moz-transition: -moz-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-    -webkit-transition: -webkit-transform 500ms ease-in-out, opacity 500ms ease-in-out;
-}
-
-.slick-slide img{
-    opacity: 0.2;
-}
-
-.slick-slide.item-left img {
-    //-webkit-transform: scale(0.5) translateX(50%);
-    //-moz-transform: scale(0.5) translateX(50%);
-    //-o-transform: scale(0.5) translateX(50%);
-    //transform: scale(0.5) translateX(50%);
-}
-
-.slick-slide.item-right img {
-    //-webkit-transform: scale(0.5) translateX(-50%);
-    //-moz-transform: scale(0.5) translateX(-50%);
-    //-o-transform: scale(0.5) translateX(-50%);
-    //transform: scale(0.5) translateX(-50%);
-}
-
-.slick-slide.slick-active img {
     opacity: 0.3;
+
+    transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -webkit-transition: opacity 500ms ease-in-out;
 }
 
 .slick-active.slick-center img, .fake-center img {
@@ -138,7 +114,6 @@ body {
 }
 
 .slick-dots {
-    //bottom: 5%;
     margin-top: 10px;
     position: static;
 }
@@ -158,18 +133,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    //transition: 200ms ease-in-out;
-    //-o-transition: 200ms ease-in-out;
-    //-moz-transition: 200ms ease-in-out;
-    //-webkit-transition: 200ms ease-in-out;
 }
 
 #photo-modal-img {
     clip-path: inset(5px 5px 5px 5px);
-
-    //transition: 200ms ease-in-out;
-    //-o-transition: 200ms ease-in-out;
-    //-moz-transition: 200ms ease-in-out;
-    //-webkit-transition: 500ms ease-in-out;
 }
