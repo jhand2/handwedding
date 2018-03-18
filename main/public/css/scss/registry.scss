@@ -18,17 +18,11 @@
 
 html, body {
     height: 100%;
-    top: 0;
-    left: 0;
     width: 100%;
-    bottom: 0;
-    margin: 0;
-    padding:0;
-    position:absolute;
 }
 
 body {
-    background: url("https://i1.wp.com/www.liveatkirklandcrossing.com/wp-content/uploads/2014/08/kirkland-sunset.jpg?ssl=1") no-repeat right center fixed; 
+    background: url("https://wallpaperscraft.com/image/interior_design_style_home_house_room_kitchen_75557_1920x1200.jpg") no-repeat right center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -49,6 +43,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 20em;
     margin-bottom: 1em;
 }
 
@@ -61,7 +56,7 @@ h1 {
     margin-left: 20px;
     margin-right: 20px;
     width: 50em;
-    height: 20em;
+    height: 30em;
     cursor: pointer;
 }
 
@@ -70,19 +65,31 @@ h1 {
     background-size: contain;
 }
 
-#amazon-link {
-    background: white url("http://www.readytoberiedesels.com/images/amazon.jpg") no-repeat center center;
+#macys-link {
+    background: white url("https://static1.squarespace.com/static/5641f6f9e4b0d09cf8726dea/583238d9e6f2e12eebd76d51/583238d99f74568b29217f26/1479686362159/Macy%27s.jpeg?format=2500w") no-repeat center center;
     background-size: contain;
 }
 
-@media only screen and (min-width : 725px) {
+@media only screen and (max-width : 725px) {
     .reglink {
         margin-top: 50px;
-        width: 50em;
-        height: 30em;
+        width: 25em;
+        height: 20em;
+    }
+
+    #reglink-container {
+        margin-top: 5em;
     }
 
     h1 {
         font-size: 10em;
+    }
+}
+
+@media only screen and (max-width : 400px) {
+    .reglink {
+        margin-top: 50px;
+        width: 20em;
+        height: 16em;
     }
 }

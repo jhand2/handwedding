@@ -91,6 +91,11 @@ body {
     margin-right: 100px;
 }
 
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
 .slick-slide img {
     opacity: 0.3;
 
@@ -133,6 +138,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: opacity 350ms ease-in-out;
+    -o-transition: opacity 350ms ease-in-out;
+    -moz-transition: opacity 350ms ease-in-out;
+    -webkit-transition: opacity 350ms ease-in-out;
 }
 
 #photo-modal-img {

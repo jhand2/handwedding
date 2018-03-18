@@ -1,47 +1,56 @@
 $(function() {
     $("#photo-modal").hide();
     $("#photo-modal").on("click", function() {
+        console.log("Test");
         $("#photo-modal").css("opacity", 0);
         $("#photo-modal")
         .one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
         function(e){
             console.log("done")
-            $(this).hide();
             $(this).unbind(
                 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
             );
+
+            $("#photo-modal").hide();
         });
     });
 
     var carousel = $("#myCarousel");
-    var imFolder = "magnolia";
+    var imFolder = "kirkland";
     $.get("/api/photo_paths/" + imFolder).then(function(paths) {
         var total = 7;
         paths = JSON.parse(paths);
         for (let p of paths) {
-            var itemDiv = $('<div class="item"></div>');
-            var img = $('<img class="item-img" />');
-            img.attr("src", "/img/engagement/" + imFolder + "/" + p);
-            itemDiv.append(img);
-            var w = Math.min(900, Math.round($(window).width() * 0.74));
-            var h = Math.round(w * 0.72);
-            itemDiv.width(w + 'px');
-            itemDiv.height(h + 'px');
+            if (p.endsWith(".jpg")) {
+                var itemDiv = $('<div class="item"></div>');
+                var img = $('<img class="item-img" />');
+                img.attr("src", "/img/engagement/" + imFolder + "/" + p);
+                itemDiv.append(img);
+                var w = Math.min(900, Math.round($(window).width() * 0.74));
+                var h = Math.round(w * 0.72);
+                if (p.startsWith("p_")) {
+                    w = Math.min(400, Math.round($(window).width() * 0.74));
+                    h = Math.round(w * 1.5);
+                }
+                itemDiv.width(w + 'px');
+                itemDiv.height(h + 'px');
 
-            itemDiv.on("click", function(e) {
-                console.log($(e).offset())
-                var img = $("#photo-modal-img");
+                itemDiv.on("click", function(e) {
+                    console.log($(e).offset())
+                    var img = $("#photo-modal-img");
 
-                $("#photo-modal-img").attr("src", e.target.currentSrc);
-                $("#photo-modal").css("opacity", 0);
-                $("#photo-modal").show();
+                    $("#photo-modal-img").attr("src", e.target.currentSrc);
+                    $("#photo-modal").css("opacity", 0);
+                    $("#photo-modal").show();
 
-                $("#photo-modal-img").css("max-height", "100vh");
-                $("#photo-modal-img").css("max-width", "100%");
-                $("#photo-modal").css("opacity", 1);
-            });
+                    $("#photo-modal-img").css("max-height", "100vh");
+                    $("#photo-modal-img").css("max-width", "100%");
+                    $("#photo-modal").css("opacity", 1);
+                });
 
-            carousel.append(itemDiv)
+                carousel.append(itemDiv)
+                console.log("W: " + img.width() + " H: " + img.height());
+            }
         }
 
         addCarousel(carousel);
@@ -95,6 +104,10 @@ function addCarousel(container) {
             }
         ]
     });
+
+    $(".carousel-control").mouseup(function(){
+        $(this).blur();
+    })
 }
 
 function updateClasses(newCurr, total) {
