@@ -17,7 +17,7 @@
 }
 
 html, body {
-    height: 100%;
+    height:100vh;
     width: 100%;
 }
 
@@ -27,6 +27,8 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -43,8 +45,8 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top: 20em;
-    margin-bottom: 1em;
+    //margin-top: 20em;
+    flex-grow: 1;
 }
 
 .reglink {
@@ -55,8 +57,8 @@ h1 {
     margin-top: 15px;
     margin-left: 20px;
     margin-right: 20px;
-    width: 50em;
-    height: 30em;
+    width: 45em;
+    height: 27em;
     cursor: pointer;
 }
 
@@ -67,28 +69,33 @@ h1 {
 
 #macys-link {
     background: white url("https://static1.squarespace.com/static/5641f6f9e4b0d09cf8726dea/583238d9e6f2e12eebd76d51/583238d99f74568b29217f26/1479686362159/Macy%27s.jpeg?format=2500w") no-repeat center center;
-    background-size: contain;
+    background-size: 95% 65%;
 }
 
 @media only screen and (max-width : 725px) {
     .reglink {
-        margin-top: 50px;
-        width: 25em;
-        height: 20em;
-    }
-
-    #reglink-container {
-        margin-top: 5em;
+        width: 35em;
+        height: 25em;
     }
 
     h1 {
         font-size: 10em;
     }
+
+    #macys-link {
+        background-size: 95% 50%;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    .reglink {
+        width: 25em;
+        height: 20em;
+    }
 }
 
 @media only screen and (max-width : 400px) {
     .reglink {
-        margin-top: 50px;
         width: 20em;
         height: 16em;
     }
