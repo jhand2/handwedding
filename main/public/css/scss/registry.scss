@@ -45,20 +45,15 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    //margin-top: 20em;
     flex-grow: 1;
 }
 
 .reglink {
-    display: inline-block;
+    display: flex;
     box-shadow: 3px 3px 15px 3px #1e1e1e;
     border-radius: 15px;
-
-    margin-top: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 45em;
-    height: 27em;
+    width: 35%;
+    height: 40vh;
     cursor: pointer;
 }
 
@@ -72,10 +67,10 @@ h1 {
     background-size: 95% 65%;
 }
 
-@media only screen and (max-width : 725px) {
+@media only screen and (max-width : 1200px) {
     .reglink {
-        width: 35em;
-        height: 25em;
+        width: 45%;
+        height: 33vh;
     }
 
     h1 {
@@ -87,16 +82,24 @@ h1 {
     }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 800px) {
     .reglink {
-        width: 25em;
-        height: 20em;
+        width: 65%;
+        height: 33vh;
+    }
+
+    #macys-link {
+        background-size: 95% 45%;
     }
 }
 
 @media only screen and (max-width : 400px) {
-    .reglink {
-        width: 20em;
-        height: 16em;
+    //.reglink {
+        //width: 20em;
+        //height: 16em;
+    //}
+
+    #macys-link {
+        background-size: 95% 45%;
     }
 }

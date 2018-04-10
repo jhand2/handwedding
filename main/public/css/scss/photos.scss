@@ -1,3 +1,5 @@
+@import "main.scss";
+
 html, body {
     height:100vh;
 }
@@ -148,3 +150,32 @@ body {
 #photo-modal-img {
     clip-path: inset(5px 5px 5px 5px);
 }
+
+#wm-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    right:0;
+    bottom: 0;
+    width: 100%;
+}
+
+#wm-text {
+    display:inline-block;
+}
+
+#wm-link {
+    color: $link-focus;
+    font-weight: bold;
+}
+
+#wm-link:hover {
+    color: $dock-green;
+}
+
+a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
