@@ -1,4 +1,5 @@
 $(function() {
+    $(window).resize(resizePhotos);
     $("#photo-modal").hide();
     $("#photo-modal").on("click", function() {
         console.log("Test");
@@ -141,4 +142,22 @@ function circularDistance(a, b, total, direction) {
             d = (total - a) + b;
     }
     return d;
+}
+
+function resizePhotos() {
+    $(".item").each(function(itemDiv) {
+        var w = Math.min(900, Math.round($(window).width() * 0.74));
+        var h = Math.round(w * 0.72);
+
+        // Get path to image
+        var path = $(this).find(".item-img").attr("src");
+        var p = path.split("/").slice(-1)[0];
+
+        if (p.startsWith("p_")) {
+            w = Math.min(400, Math.round($(window).width() * 0.74));
+            h = Math.round(w * 1.5);
+        }
+        $(this).width(w + 'px');
+        $(this).height(h + 'px');
+    });
 }

@@ -1,4 +1,6 @@
 @import "main.scss";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
 
 html, body {
     height:100vh;
@@ -157,17 +159,20 @@ body {
     display: flex;
     position: fixed;
     right:0;
-    bottom: 0;
+    bottom: 0.8em;
     width: 100%;
 }
 
 #wm-text {
     display:inline-block;
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.9em;
 }
 
 #wm-link {
     color: $link-focus;
     font-weight: bold;
+    font-family: 'Josefin Slab', serif;
 }
 
 #wm-link:hover {
@@ -177,5 +182,13 @@ body {
 a, a:hover {
     text-decoration: none;
     cursor: pointer;
+}
+
+@media only screen and (max-width : 768px) {
+    #wm-text {
+        display:inline-block;
+        font-family: 'Josefin Slab', serif;
+        font-size: 1.5em;
+    }
 }
 
