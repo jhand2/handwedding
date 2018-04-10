@@ -2,12 +2,10 @@ $(function() {
     $(window).resize(resizePhotos);
     $("#photo-modal").hide();
     $("#photo-modal").on("click", function() {
-        console.log("Test");
         $("#photo-modal").css("opacity", 0);
         $("#photo-modal")
         .one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
         function(e){
-            console.log("done")
             $(this).unbind(
                 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend'
             );
@@ -37,7 +35,6 @@ $(function() {
                 itemDiv.height(h + 'px');
 
                 itemDiv.on("click", function(e) {
-                    console.log($(e).offset())
                     var img = $("#photo-modal-img");
 
                     $("#photo-modal-img").attr("src", e.target.currentSrc);
@@ -50,7 +47,6 @@ $(function() {
                 });
 
                 carousel.append(itemDiv)
-                console.log("W: " + img.width() + " H: " + img.height());
             }
         }
 
