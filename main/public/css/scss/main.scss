@@ -10,6 +10,10 @@ $headerbg: #2d2d2d;
 $link-focus: #82b1ff;
 $dock-green: #486D5B;
 
+html, body{
+    height: 100%;
+}
+
 .container {
     width: 100%;
     padding-left: 5%;
@@ -21,7 +25,7 @@ $dock-green: #486D5B;
     .background {
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100vh;
+        height: 100%;
         width: 100%;
     }
 }
