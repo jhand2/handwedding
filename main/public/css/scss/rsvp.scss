@@ -6,13 +6,15 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     margin-left: 20%;
     margin-right: 20%;
-    margin-bottom: 8%;
     width: 60%;
+    flex-grow: 1;
 }
 
 #link-rsvp {
