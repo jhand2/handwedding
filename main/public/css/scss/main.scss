@@ -10,9 +10,17 @@ $headerbg: #2d2d2d;
 $link-focus: #82b1ff;
 $dock-green: #486D5B;
 
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
+}
+
 html, body{
     height: 100%;
-    overflow: hidden;
 }
 
 .container {
