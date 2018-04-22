@@ -12,6 +12,8 @@ $dock-green: #486D5B;
 
 html {
     overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 
 body {
