@@ -1,6 +1,10 @@
 @import "main.scss";
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
+.navbar {
+    position: static;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -18,17 +22,22 @@ body {
 
 .container {
     flex-grow: 1;
+    display: flex;
 }
 
 .row {
     margin-left: 0%;
     margin-right: 0%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
+
 .row, .carousel{
-    position: absolute;
-    height: 100%; /* Prevent carousel from being distorted if for some reason image doesn't load */
-    top: 0;
+    //position: absolute;
+    //height: 100%; [> Prevent carousel from being distorted if for some reason image doesn't load <]
+    //top: 0;
     width: 100%;
 }
 
@@ -82,7 +91,7 @@ body {
 }
 
 .slick-list {
-    margin-top: 100px;
+    //margin-top: 100px;
 }
 
 .slick-slide {
@@ -111,6 +120,24 @@ body {
 
 .carousel-control {
     z-index: 90;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background: none;
+    //background-image: radial-gradient(circle closest-side, rgba(0,0,0,1), rgba(0,0,0,.1))
+    position: absolute;
+    display: block;
+    opacity: 1;
+}
+
+//.carousel-control.right:hover {
+.carousel-control>span {
+    //color: $link-focus;
+}
+
+.carousel-control>span {
+    //color: black;
+    //color: $headerbg;
 }
 
 .item-img {
@@ -152,10 +179,11 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-    position: fixed;
-    right:0;
-    bottom: 0.8em;
+    //position: fixed;
+    //right:0;
+    //bottom: 0.8em;
     width: 100%;
+    margin-bottom: 1em;
 }
 
 #wm-text {

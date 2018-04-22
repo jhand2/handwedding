@@ -12,13 +12,13 @@ $dock-green: #486D5B;
 
 html {
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling:touch;
 }
 
 body {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling:touch;
+    //overflow-y: scroll;
+    //-webkit-overflow-scrolling:touch;
 }
 
 html, body{
