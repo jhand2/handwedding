@@ -25,10 +25,15 @@ $(function() {
                 var img = $('<img class="item-img" />');
                 img.attr("src", "/img/engagement/" + imFolder + "/" + p);
                 itemDiv.append(img);
-                var w = Math.min(900, Math.round($(window).width() * 0.74));
+
+                var l_coeff = 0.74;
+                var p_coeff = 0.74;
+                if ($(window).width() < 500) p_coeff = 0.65;
+
+                var w = Math.min(900, Math.round($(window).width() * l_coeff));
                 var h = Math.round(w * 0.72);
                 if (p.startsWith("p_")) {
-                    w = Math.min(400, Math.round($(window).width() * 0.74));
+                    w = Math.min(430,Math.round($(window).width() * p_coeff));
                     h = Math.round(w * 1.5);
                 }
                 itemDiv.width(w + 'px');
@@ -83,7 +88,7 @@ function addCarousel(container) {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
-                    dots: false,
+                    dots: true,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1
@@ -93,7 +98,7 @@ function addCarousel(container) {
                 breakpoint: 480,
                 settings: {
                     arrows: false,
-                    dots: false,
+                    dots: true,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1
