@@ -63,7 +63,10 @@ h1 {
 
 #macys-link {
     background: white url("https://static1.squarespace.com/static/5641f6f9e4b0d09cf8726dea/583238d9e6f2e12eebd76d51/583238d99f74568b29217f26/1479686362159/Macy%27s.jpeg?format=2500w") no-repeat center center;
-    background-size: 95% 65%;
+
+    background-size: contain;
+    background-origin: content-box;
+    padding: 1em;
 }
 
 @media only screen and (max-width : 1200px) {

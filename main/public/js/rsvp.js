@@ -2,7 +2,7 @@ $(function() {
     // Get bounding box for header
     var nav_h = $(".navbar").height();
     console.log(nav_h);
-    $("#rsvp-container").css("margin-top", nav_h);
+    $("iframe").css("margin-top", nav_h);
 
     // Position loader in center of iframe
     var pos = $('iframe')[0].getBoundingClientRect();
@@ -20,6 +20,6 @@ $(function() {
     $('iframe').on("load", function() {
         $('.loader').fadeTo(200, 0);
         $('#rsvp-container').fadeTo(500, 1.0);
-        $('iframe').attr("scrolling", "yes");
+        //$('iframe').attr("scrolling", "yes");
     });
 });
