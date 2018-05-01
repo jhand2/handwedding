@@ -1,52 +1,25 @@
-//$(function() {
-    //var height = $(".navbar").height();
-    //var fields = $(".form-group").length;
-    //$(".container").css("margin-top", height);
+$(function() {
+    // Get bounding box for header
+    var nav_h = $(".navbar").height();
+    console.log(nav_h);
+    $("#rsvp-container").css("margin-top", nav_h);
 
-    //$("#add-guest").on("click", function(e) {
-        //$("#guest-container").append(
-            //'<div>' +
-                //'<input class="guest-row form-control"></input>' +
-                //'<i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>' +
-            //'</div>'
-        //);
+    // Position loader in center of iframe
+    var pos = $('iframe')[0].getBoundingClientRect();
+    var w = $('iframe').width();
+    var h = $('iframe').height();
 
-        //$(".fa-times-circle").on("click", function(e) {
-            //var i = $(this).parent().index();
-            //$(this).parent().remove();
-        //});
-    //});
+    var sw = $(".loader").width();
+    var sh = $(".loader").height();
 
-    //var submit_data = function() {
-        //var going_selected = $('input[name=optradio]:checked', '#rsvp_submit').val();
-        //var guests = [];
-        //$(".guest-row").each(function(i) {
-            //guests.push($(this).val());
-        //});
+    var spin_left = ((w - pos["left"]) / 2) + pos["left"] - (sw / 2);
+    var spin_top = ((h - pos["top"]) / 2) + pos["top"] + (sh);
 
-        //var d = {
-            //"name": $("#name").val(),
-            //"attending": going_selected == "true",
-            //"guests": guests
-        //}
+    $(".loader").css({top: spin_top, left: spin_left});
 
-        //$.ajax({
-            //url: "/api/rsvp",
-            //type: "post",
-            //data: JSON.stringify(d),
-            //processData: false,
-            //contentType: "application/json"
-        //}).then(function() {
-            //$("#name").val("");
-            //$("input").blur();
-            //$("#guest-container").empty();
-            //$('#rsvp input[type="radio":checked]').each(function(){
-                //$(this).checked = false;  
-            //});
-        //});
-    //}
-
-    //$("#submit").on("click", function(e) {
-        //submit_data();
-    //});
-//})
+    $('iframe').on("load", function() {
+        $('.loader').fadeTo(200, 0);
+        $('#rsvp-container').fadeTo(500, 1.0);
+        $('iframe').attr("scrolling", "yes");
+    });
+});

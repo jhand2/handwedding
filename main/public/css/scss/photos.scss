@@ -35,9 +35,6 @@ body {
 
 
 .row, .carousel{
-    //position: absolute;
-    //height: 100%; [> Prevent carousel from being distorted if for some reason image doesn't load <]
-    //top: 0;
     width: 100%;
 }
 
@@ -90,10 +87,6 @@ body {
     justify-content: center;
 }
 
-.slick-list {
-    //margin-top: 100px;
-}
-
 .slick-slide {
     margin-left: 100px;
     margin-right: 100px;
@@ -125,20 +118,9 @@ body {
 
 .carousel-control.right, .carousel-control.left {
     background: none;
-    //background-image: radial-gradient(circle closest-side, rgba(0,0,0,1), rgba(0,0,0,.1))
     position: absolute;
     display: block;
     opacity: 1;
-}
-
-//.carousel-control.right:hover {
-.carousel-control>span {
-    //color: $link-focus;
-}
-
-.carousel-control>span {
-    //color: black;
-    //color: $headerbg;
 }
 
 .item-img {
@@ -182,9 +164,6 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-    //position: fixed;
-    //right:0;
-    //bottom: 0.8em;
     width: 100%;
     margin-bottom: 1em;
 }
