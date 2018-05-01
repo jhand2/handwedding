@@ -26,18 +26,7 @@ $(function() {
                 img.attr("src", "/img/engagement/" + imFolder + "/" + p);
                 itemDiv.append(img);
 
-                var l_coeff = 0.74;
-                var p_coeff = 0.74;
-                if ($(window).width() < 500) p_coeff = 0.65;
-
-                var w = Math.min(900, Math.round($(window).width() * l_coeff));
-                var h = Math.round(w * 0.72);
-                if (p.startsWith("p_")) {
-                    w = Math.min(430,Math.round($(window).width() * p_coeff));
-                    h = Math.round(w * 1.5);
-                }
-                itemDiv.width(w + 'px');
-                itemDiv.height(h + 'px');
+                sizePhotoDiv(itemDiv, p.startsWith("p_"));
 
                 itemDiv.on("click", function(e) {
                     var img = $("#photo-modal-img");
@@ -55,6 +44,8 @@ $(function() {
             }
         }
 
+        resizePhotos();
+
         addCarousel(carousel);
         $(".slick-dots>li>button").text("&bull;")
 
@@ -65,6 +56,28 @@ $(function() {
         });
     })
 });
+
+function sizePhotoDiv(item, isPortrait) {
+    var coeff = 0.8;
+
+    var containerHeight = $("#carousel-container").height();
+    var windowWidth = $(window).width();
+
+
+    var h = Math.round(containerHeight * coeff);
+    var w = Math.round(h / 0.72);
+
+    if (isPortrait) {
+        w = Math.round(h / 1.5);
+    } else if (w > windowWidth) {
+        var w = Math.round(windowWidth * coeff);
+        var h = Math.round(w * 0.72);
+
+    }
+    
+    $(item).width(w + 'px');
+    $(item).height(h + 'px');
+}
 
 function addCarousel(container) {
     container.slick({
@@ -146,19 +159,15 @@ function circularDistance(a, b, total, direction) {
 }
 
 function resizePhotos() {
-    $(".item").each(function(itemDiv) {
-        var w = Math.min(900, Math.round($(window).width() * 0.74));
-        var h = Math.round(w * 0.72);
+    $(".item").each(function(i, ele) {
+        var e = $(ele);
+        var w = e.width();
+        var h = e.height();
 
-        // Get path to image
-        var path = $(this).find(".item-img").attr("src");
-        var p = path.split("/").slice(-1)[0];
-
-        if (p.startsWith("p_")) {
-            w = Math.min(400, Math.round($(window).width() * 0.74));
-            h = Math.round(w * 1.5);
+        if (w > h) {
+            sizePhotoDiv(ele, false);
+        } else {
+            sizePhotoDiv(ele, true);
         }
-        $(this).width(w + 'px');
-        $(this).height(h + 'px');
     });
 }

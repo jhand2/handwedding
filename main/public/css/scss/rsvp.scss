@@ -19,12 +19,10 @@ body {
     flex-grow: 1;
     opacity: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 html {
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .loader {

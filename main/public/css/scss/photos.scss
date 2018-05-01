@@ -16,6 +16,7 @@ body {
 }
 
 #carousel-container {
+    flex-grow: 1;
     margin-top: 3%;
     padding: 0px;
 }
@@ -88,8 +89,8 @@ body {
 }
 
 .slick-slide {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 0.25%;
+    margin-right: 0.25%;
 }
 
 .slick-track {
