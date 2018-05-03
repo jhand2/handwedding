@@ -18,8 +18,10 @@ $(function() {
     $(".loader").css({top: spin_top, left: spin_left});
 
     $('iframe').on("load", function() {
-        $('.loader').fadeTo(200, 0);
+        $('.loader').fadeTo(200, 0, function() {
+            // remove
+            $(".loader").remove();
+        });
         $('#rsvp-container').fadeTo(500, 1.0);
-        //$('iframe').attr("scrolling", "yes");
     });
 });
